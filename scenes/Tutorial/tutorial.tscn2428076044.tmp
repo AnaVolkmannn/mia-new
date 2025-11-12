@@ -1,0 +1,53 @@
+[gd_scene load_steps=2 format=3 uid="uid://dotyx4jil1m4t"]
+
+[ext_resource type="Script" uid="uid://drr8vv50asgt" path="res://script/Tutorial/d_label.gd" id="1_wle2u"]
+
+[node name="Tutorial" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+alignment = 1
+
+[node name="normal" type="VBoxContainer" parent="HBoxContainer"]
+layout_mode = 2
+
+[node name="DLabel" type="Label" parent="HBoxContainer/normal"]
+layout_mode = 2
+text = "1"
+script = ExtResource("1_wle2u")
+
+[node name="DLabel2" type="Label" parent="HBoxContainer/normal"]
+layout_mode = 2
+text = "10"
+
+[node name="DLabel3" type="Label" parent="HBoxContainer/normal"]
+layout_mode = 2
+text = "5"
+
+[node name="romanos" type="VBoxContainer" parent="HBoxContainer"]
+layout_mode = 2
+
+[node name="Label3" type="Label" parent="HBoxContainer/romanos"]
+layout_mode = 2
+text = "I"
+
+[node name="Label" type="Label" parent="HBoxContainer/romanos"]
+layout_mode = 2
+text = "X"
+
+[node name="Label2" type="Label" parent="HBoxContainer/romanos"]
+layout_mode = 2
+text = "V"
+
+[connection signal="gui_input" from="HBoxContainer/normal/DLabel" to="HBoxContainer/normal/DLabel" method="_on_gui_input"]

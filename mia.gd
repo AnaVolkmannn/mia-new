@@ -5,7 +5,7 @@ const SPEED = 300.0
 @onready var anim = $AnimatedSprite2D  # referência ao nó de animação
 
 func _physics_process(delta: float) -> void:
-	var direction = Input.get_vector("ui_left", "ui_right", "ui_up", "ui_down")
+	var direction = Input.get_vector("left", "right", "up", "down")
 
 	# Aplica o movimento
 	velocity = direction * SPEED

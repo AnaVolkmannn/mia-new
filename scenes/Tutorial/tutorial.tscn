@@ -1,0 +1,90 @@
+[gd_scene load_steps=4 format=3 uid="uid://dotyx4jil1m4t"]
+
+[ext_resource type="Script" uid="uid://dnnhyrog2gigm" path="res://scenes/Tutorial/tutorial.gd" id="1_43fa4"]
+[ext_resource type="PackedScene" uid="uid://cvj7e82nuuja3" path="res://scenes/Tutorial/drop_area.tscn" id="2_43fa4"]
+[ext_resource type="PackedScene" uid="uid://dmdaw2uwqlu1q" path="res://scenes/Tutorial/dlabel.tscn" id="3_43fa4"]
+
+[node name="Tutorial" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_43fa4")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 200
+alignment = 1
+
+[node name="romanos" type="VBoxContainer" parent="HBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 40
+alignment = 1
+
+[node name="Label3" type="Label" parent="HBoxContainer/romanos"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 50
+text = "I"
+
+[node name="Label" type="Label" parent="HBoxContainer/romanos"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 50
+text = "X"
+
+[node name="Label2" type="Label" parent="HBoxContainer/romanos"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 50
+text = "V"
+
+[node name="Normal" type="VBoxContainer" parent="HBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 100
+alignment = 1
+
+[node name="DropArea1" parent="HBoxContainer/Normal" instance=ExtResource("2_43fa4")]
+layout_mode = 2
+number = 1
+
+[node name="DropArea10" parent="HBoxContainer/Normal" instance=ExtResource("2_43fa4")]
+layout_mode = 2
+number = 10
+
+[node name="DropArea5" parent="HBoxContainer/Normal" instance=ExtResource("2_43fa4")]
+layout_mode = 2
+number = 5
+
+[node name="Arrastavel" type="VBoxContainer" parent="HBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 40
+alignment = 1
+
+[node name="Dlabel10" parent="." instance=ExtResource("3_43fa4")]
+layout_mode = 0
+offset_left = 791.0
+offset_top = 159.0
+offset_right = 792.0
+offset_bottom = 242.0
+number = 10
+
+[node name="Dlabel5" parent="." instance=ExtResource("3_43fa4")]
+layout_mode = 0
+offset_left = 791.0
+offset_top = 282.0
+offset_right = 792.0
+offset_bottom = 365.0
+number = 5
+
+[node name="Dlabel1" parent="." instance=ExtResource("3_43fa4")]
+layout_mode = 0
+offset_left = 791.0
+offset_top = 405.0
+offset_right = 792.0
+offset_bottom = 488.0
+number = 1
