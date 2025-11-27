@@ -1,0 +1,7 @@
+[gd_scene format=3 uid="uid://cen0ng5ybqjfy"]
+
+[node name="OptionButton" type="Button"]
+text = "Option 1"
+alignment = 0
+autowrap_mode = 3
+clip_text = true

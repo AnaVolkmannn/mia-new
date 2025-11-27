@@ -1,6 +1,6 @@
-[gd_scene load_steps=28 format=3 uid="uid://ck0fr15kehyg0"]
+[gd_scene load_steps=29 format=3 uid="uid://ck0fr15kehyg0"]
 
-[ext_resource type="Script" uid="uid://c5hskb5mvu0k" path="res://mia.gd" id="1_7rvmt"]
+[ext_resource type="Script" uid="uid://c5hskb5mvu0k" path="res://Player/mia.gd" id="1_7rvmt"]
 [ext_resource type="Texture2D" uid="uid://j8ycipmmdc6v" path="res://assets/mia/front/1.png" id="2_7jicm"]
 [ext_resource type="Texture2D" uid="uid://po5c1nbwrgwg" path="res://assets/mia/back/1.png" id="2_ulxo5"]
 [ext_resource type="Texture2D" uid="uid://sl2r5bbgw64m" path="res://assets/mia/back/2.png" id="3_gl7m1"]
@@ -25,9 +25,10 @@
 [ext_resource type="Texture2D" uid="uid://ct5wvmkg3jgpa" path="res://assets/mia/right/4.png" id="17_8q1te"]
 [ext_resource type="Texture2D" uid="uid://bnuy301sv4n7h" path="res://assets/mia/right/5.png" id="18_v0t1f"]
 [ext_resource type="Texture2D" uid="uid://cw0qggtnndcqj" path="res://assets/mia/right/6.png" id="19_bhehe"]
+[ext_resource type="PackedScene" uid="uid://cles8ey1rkjwq" path="res://Menu/hud/hud.tscn" id="26_j07kl"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_wnlrp"]
-size = Vector2(148, 203.5)
+size = Vector2(23, 25.75)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_881ty"]
 animations = [{
@@ -128,6 +129,7 @@ animations = [{
 script = ExtResource("1_7rvmt")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-1, 1)
 shape = SubResource("RectangleShape2D_wnlrp")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
@@ -135,4 +137,6 @@ sprite_frames = SubResource("SpriteFrames_881ty")
 animation = &"back"
 
 [node name="Camera2D" type="Camera2D" parent="."]
-zoom = Vector2(2, 2)
+zoom = Vector2(3, 3)
+
+[node name="HUD" parent="." instance=ExtResource("26_j07kl")]

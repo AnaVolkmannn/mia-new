@@ -1,0 +1,38 @@
+[gd_scene load_steps=3 format=3 uid="uid://damsjgrqvvm0i"]
+
+[ext_resource type="Script" uid="uid://351872h5k0nv" path="res://script/lifebar/life_bar.gd" id="1_grar4"]
+[ext_resource type="Texture2D" uid="uid://uaxwyvqslup0" path="res://assets/2 Objects/4 Stone/9.png" id="2_j8xme"]
+
+[node name="LifeBar" type="HBoxContainer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 16.0
+offset_top = 16.0
+offset_right = 16.0
+offset_bottom = 16.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 40
+alignment = 1
+script = ExtResource("1_grar4")
+
+[node name="Heart1" type="Sprite2D" parent="."]
+position = Vector2(8, 0)
+texture = ExtResource("2_j8xme")
+
+[node name="Heart2" type="Sprite2D" parent="."]
+position = Vector2(40, 0)
+texture = ExtResource("2_j8xme")
+
+[node name="Heart3" type="Sprite2D" parent="."]
+position = Vector2(72, 0)
+texture = ExtResource("2_j8xme")
+
+[node name="Heart4" type="Sprite2D" parent="."]
+position = Vector2(104, 0)
+texture = ExtResource("2_j8xme")
+
+[node name="Heart5" type="Sprite2D" parent="."]
+position = Vector2(136, 0)
+texture = ExtResource("2_j8xme")

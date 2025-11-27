@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=3 uid="uid://bimhhk7wh8b2t"]
 
-[ext_resource type="Script" uid="uid://bkow2nvo6g64a" path="res://biblioteca.gd" id="1_77e7b"]
+[ext_resource type="Script" uid="uid://bkow2nvo6g64a" path="res://script/Locais/biblioteca.gd" id="1_77e7b"]
 [ext_resource type="Texture2D" uid="uid://cfkxnpmcc83p0" path="res://assets/mapa/biblioteca.png" id="2_vblbn"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_rlaul"]

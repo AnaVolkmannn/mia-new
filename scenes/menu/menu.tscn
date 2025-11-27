@@ -46,12 +46,22 @@ theme_override_constants/separation = 19
 
 [node name="play" type="Button" parent="VBoxContainer"]
 layout_mode = 2
-text = "play
+text = "Continue
+"
+
+[node name="play2" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+text = "New game
 "
 
 [node name="quit" type="Button" parent="VBoxContainer"]
 layout_mode = 2
-text = "quit"
+text = "Quit"
+
+[node name="DifficultyOption" type="OptionButton" parent="VBoxContainer"]
+layout_mode = 2
 
 [connection signal="pressed" from="VBoxContainer/play" to="." method="_on_play_pressed"]
+[connection signal="pressed" from="VBoxContainer/play2" to="." method="_on_play_2_pressed"]
 [connection signal="pressed" from="VBoxContainer/quit" to="." method="_on_quit_pressed"]
+[connection signal="item_selected" from="VBoxContainer/DifficultyOption" to="." method="_on_difficulty_option_item_selected"]

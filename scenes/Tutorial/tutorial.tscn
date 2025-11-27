@@ -28,11 +28,6 @@ layout_mode = 2
 theme_override_constants/separation = 40
 alignment = 1
 
-[node name="Label3" type="Label" parent="HBoxContainer/romanos"]
-layout_mode = 2
-theme_override_font_sizes/font_size = 50
-text = "I"
-
 [node name="Label" type="Label" parent="HBoxContainer/romanos"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 50
@@ -43,6 +38,11 @@ layout_mode = 2
 theme_override_font_sizes/font_size = 50
 text = "V"
 
+[node name="Label3" type="Label" parent="HBoxContainer/romanos"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 50
+text = "I"
+
 [node name="Normal" type="VBoxContainer" parent="HBoxContainer"]
 layout_mode = 2
 theme_override_constants/separation = 100
@@ -52,13 +52,13 @@ alignment = 1
 layout_mode = 2
 number = 1
 
-[node name="DropArea10" parent="HBoxContainer/Normal" instance=ExtResource("2_43fa4")]
-layout_mode = 2
-number = 10
-
 [node name="DropArea5" parent="HBoxContainer/Normal" instance=ExtResource("2_43fa4")]
 layout_mode = 2
 number = 5
+
+[node name="DropArea10" parent="HBoxContainer/Normal" instance=ExtResource("2_43fa4")]
+layout_mode = 2
+number = 10
 
 [node name="Arrastavel" type="VBoxContainer" parent="HBoxContainer"]
 layout_mode = 2

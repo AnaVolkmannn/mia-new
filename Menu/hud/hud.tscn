@@ -1,0 +1,29 @@
+[gd_scene load_steps=2 format=3 uid="uid://cles8ey1rkjwq"]
+
+[ext_resource type="Script" uid="uid://ccyubm5yei5na" path="res://hud.gd" id="1_5x4ov"]
+
+[node name="HUD" type="CanvasLayer"]
+script = ExtResource("1_5x4ov")
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 10
+anchor_right = 1.0
+grow_horizontal = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Control"]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 65.0
+grow_horizontal = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="Control/HBoxContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_top = 0
+
+[node name="Label" type="Label" parent="Control/HBoxContainer/MarginContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 30
+text = "0/4"

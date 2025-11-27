@@ -1,0 +1,118 @@
+[gd_scene load_steps=6 format=3 uid="uid://bdwcxosd73r6r"]
+
+[ext_resource type="Script" uid="uid://dfbkqj2d6aw20" path="res://scenes/Minigames/minigame_count.gd" id="1_k758d"]
+[ext_resource type="PackedScene" uid="uid://cvj7e82nuuja3" path="res://scenes/Tutorial/drop_area.tscn" id="2_bxrqg"]
+[ext_resource type="PackedScene" uid="uid://dmdaw2uwqlu1q" path="res://scenes/Tutorial/dlabel.tscn" id="3_b1gll"]
+[ext_resource type="PackedScene" uid="uid://ck4ne3mhhbbb4" path="res://Menu/timer/timer_label.tscn" id="4_mcu35"]
+[ext_resource type="PackedScene" uid="uid://damsjgrqvvm0i" path="res://Menu/lifebar/life_bar.tscn" id="5_luehi"]
+
+[node name="MinigameCount1" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_k758d")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 14
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_top = -34.5
+offset_bottom = 34.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 70
+alignment = 1
+
+[node name="numero" type="VBoxContainer" parent="HBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 40
+alignment = 1
+
+[node name="Label" type="Label" parent="HBoxContainer/numero"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 50
+text = "numero"
+
+[node name="operador" type="VBoxContainer" parent="HBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 40
+alignment = 1
+
+[node name="Label" type="Label" parent="HBoxContainer/operador"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 50
+text = "Operator"
+
+[node name="droparea" type="VBoxContainer" parent="HBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 100
+alignment = 1
+
+[node name="DropArea1" parent="HBoxContainer/droparea" instance=ExtResource("2_bxrqg")]
+layout_mode = 2
+number = 1
+
+[node name="igual" type="VBoxContainer" parent="HBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 40
+alignment = 1
+
+[node name="Label" type="Label" parent="HBoxContainer/igual"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 50
+text = "="
+
+[node name="resultado" type="VBoxContainer" parent="HBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 40
+alignment = 1
+
+[node name="Label" type="Label" parent="HBoxContainer/resultado"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 50
+text = "Resultado"
+
+[node name="Dlabel10" parent="." instance=ExtResource("3_b1gll")]
+layout_mode = 0
+offset_left = 216.0
+offset_top = 472.0
+offset_right = 217.0
+offset_bottom = 555.0
+
+[node name="Dlabel5" parent="." instance=ExtResource("3_b1gll")]
+layout_mode = 0
+offset_left = 576.0
+offset_top = 480.0
+offset_right = 577.0
+offset_bottom = 563.0
+
+[node name="Dlabel1" parent="." instance=ExtResource("3_b1gll")]
+layout_mode = 0
+offset_left = 888.0
+offset_top = 480.0
+offset_right = 889.0
+offset_bottom = 563.0
+
+[node name="timer_label" parent="." instance=ExtResource("4_mcu35")]
+layout_mode = 0
+offset_left = 976.0
+offset_top = 40.0
+offset_right = 1016.0
+offset_bottom = 123.0
+
+[node name="LifeBar" parent="." instance=ExtResource("5_luehi")]
+layout_mode = 0
+anchors_preset = 0
+anchor_right = 0.0
+anchor_bottom = 0.0
+offset_left = 48.0
+offset_top = 80.0
+offset_right = 88.0
+offset_bottom = 120.0
+grow_horizontal = 1
+grow_vertical = 1

@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://dlg7ain36ck1u"]
+
+[ext_resource type="Texture2D" uid="uid://f86y02b60g2o" path="res://icon.svg" id="1_018yy"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1fy4r"]
+size = Vector2(132, 128)
+
+[node name="Helena" type="CharacterBody2D"]
+scale = Vector2(0.3, 0.3)
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_018yy")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-1, -1)
+shape = SubResource("RectangleShape2D_1fy4r")
