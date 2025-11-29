@@ -50,15 +50,12 @@ alignment = 1
 
 [node name="DropArea1" parent="HBoxContainer/Normal" instance=ExtResource("2_43fa4")]
 layout_mode = 2
-number = 1
 
 [node name="DropArea5" parent="HBoxContainer/Normal" instance=ExtResource("2_43fa4")]
 layout_mode = 2
-number = 5
 
 [node name="DropArea10" parent="HBoxContainer/Normal" instance=ExtResource("2_43fa4")]
 layout_mode = 2
-number = 10
 
 [node name="Arrastavel" type="VBoxContainer" parent="HBoxContainer"]
 layout_mode = 2

@@ -9,6 +9,7 @@ extends Control
 
 var current_equation = {}
 var can_fail := true
+var correct_streak := 0   # ⭐ NOVO → conta acertos consecutivos
 
 const SAVE_PATH := "user://player_data.json"
 
@@ -44,7 +45,7 @@ func _generate_new_equation() -> void:
 	var options = _generate_random_options(b)
 	print("🎲 Opções:", options)
 
-	drop_area.number = b
+	drop_area.Number = b
 	drop_area.isRight = false
 	drop_area.isWrong = false
 
@@ -95,15 +96,34 @@ func _process(_delta: float) -> void:
 		print("💀 tempo acabou! tentando novamente")
 		get_tree().change_scene_to_file("res://scenes/main.tscn")
 
+	# =====================================================
+	# ⭐ MODIFICADO → Agora precisa acertar 3 vezes
+	# =====================================================
 	if drop_area.isRight:
-		print("✅ Mini-game concluído!")
-		_save_progress()
-		get_tree().change_scene_to_file("res://scenes/main.tscn")
+		drop_area.isRight = false
+		drop_area.isWrong = false   # <- importante!
+		correct_streak += 1
+		print("✅ Acerto", correct_streak, "/ 3")
+
+		if correct_streak >= 3:
+			print("🏆 Mini-game concluído com 3 acertos!")
+			_save_progress()
+			get_tree().change_scene_to_file("res://scenes/main.tscn")
+		else:
+			await get_tree().create_timer(0.8).timeout
+			_generate_new_equation()
 
 	elif drop_area.isWrong and can_fail:
 		can_fail = false
-		lifebar.set_chances( lifebar.current_chances - 1)
+
+		# limpar imediatamente
+		drop_area.isWrong = false
+		drop_area.isRight = false
+
+		lifebar.set_chances(lifebar.current_chances - 1)
 		print("❌ Resposta errada! Chances restantes:", lifebar.current_chances)
+
+		correct_streak = 0
 
 		if lifebar.current_chances <= 0:
 			print("💀 Sem chances! tentando novamente")
@@ -116,6 +136,7 @@ func _process(_delta: float) -> void:
 			await get_tree().create_timer(1.0).timeout
 
 		can_fail = true
+
 
 # ===================================================
 # 💾 SALVA PROGRESSO

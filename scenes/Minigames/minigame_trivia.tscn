@@ -1,0 +1,98 @@
+[gd_scene load_steps=6 format=3 uid="uid://burm6mvjdfwa7"]
+
+[ext_resource type="Script" uid="uid://djyao8q3j61gg" path="res://scenes/Minigames/minigame_trivia.gd" id="1_rv868"]
+[ext_resource type="PackedScene" uid="uid://wbx3g4fhwus2" path="res://scenes/Tutorial/drop_area_text.tscn" id="2_rv868"]
+[ext_resource type="PackedScene" uid="uid://ck4ne3mhhbbb4" path="res://Menu/timer/timer_label.tscn" id="4_085ve"]
+[ext_resource type="PackedScene" uid="uid://damsjgrqvvm0i" path="res://Menu/lifebar/life_bar.tscn" id="5_rt78r"]
+[ext_resource type="PackedScene" uid="uid://b3kjvuafhknn1" path="res://scenes/Tutorial/dlabelText.tscn" id="5_rv868"]
+
+[node name="MinigameTrivia" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_rv868")
+
+[node name="Pergunta" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 14
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_top = -164.0
+offset_bottom = -95.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 40
+alignment = 1
+
+[node name="Label" type="Label" parent="Pergunta"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 50
+text = "Pergunta"
+horizontal_alignment = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 14
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = 8.0
+offset_top = -20.0
+offset_right = 8.0
+offset_bottom = 49.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 150
+alignment = 1
+
+[node name="droparea" type="VBoxContainer" parent="HBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 100
+alignment = 1
+
+[node name="DropArea" parent="HBoxContainer/droparea" instance=ExtResource("2_rv868")]
+layout_mode = 2
+
+[node name="timer_label" parent="." instance=ExtResource("4_085ve")]
+layout_mode = 0
+offset_left = 976.0
+offset_top = 40.0
+offset_right = 1016.0
+offset_bottom = 123.0
+
+[node name="LifeBar" parent="." instance=ExtResource("5_rt78r")]
+layout_mode = 0
+anchors_preset = 0
+anchor_right = 0.0
+anchor_bottom = 0.0
+offset_left = 48.0
+offset_top = 80.0
+offset_right = 88.0
+offset_bottom = 120.0
+grow_horizontal = 1
+grow_vertical = 1
+
+[node name="Dlabel" parent="." instance=ExtResource("5_rv868")]
+layout_mode = 0
+offset_left = 200.0
+offset_top = 496.0
+offset_right = 240.0
+offset_bottom = 579.0
+
+[node name="Dlabel2" parent="." instance=ExtResource("5_rv868")]
+layout_mode = 0
+offset_left = 560.0
+offset_top = 496.0
+offset_right = 600.0
+offset_bottom = 579.0
+
+[node name="Dlabel3" parent="." instance=ExtResource("5_rv868")]
+layout_mode = 0
+offset_left = 928.0
+offset_top = 480.0
+offset_right = 968.0
+offset_bottom = 563.0

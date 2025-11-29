@@ -2,22 +2,33 @@ extends Label
 
 var dragging := false
 var of := Vector2.ZERO
+var initial_position := Vector2.ZERO   # ← posição salva
 
 @export var snap := 10
 @export var number: int = 0
+
 func _ready() -> void:
-	# garante que esteja sincronizado com o número inicial
-	pass
+	initial_position = position  # ← salva a posição original no editor
+
 func set_values(value: int) -> void:
 	print("🧩 set_values(", value, ") em ", name)
+
 	number = value
 	text = _to_roman(value)
-	# renomeia o Area2D filho se existir
+
+	reset_label()
+
 	if has_node("Area2D"):
 		$Area2D.name = str(value)
 	else:
-		# aviso no output caso o nó não exista
 		push_warning("⚠️ Nó 'Area2D' não encontrado em " + str(name))
+
+
+func reset_label():
+	dragging = false
+	of = Vector2.ZERO
+	position = initial_position   # ← restaura ponto original ✔
+
 
 func _to_roman(value: int) -> String:
 	var romans = {
@@ -28,14 +39,17 @@ func _to_roman(value: int) -> String:
 	}
 	return romans.get(value, str(value))
 
+
 func _process(_delta: float) -> void:
 	if dragging:
 		var new_pos = get_global_mouse_position() - of
 		position = Vector2(snapped(new_pos.x, snap), snapped(new_pos.y, snap))
 
+
 func _on_button_button_down() -> void:
 	dragging = true
 	of = get_global_mouse_position() - global_position
+
 
 func _on_button_button_up() -> void:
 	dragging = false

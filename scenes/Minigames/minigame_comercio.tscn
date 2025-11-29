@@ -1,0 +1,77 @@
+[gd_scene load_steps=6 format=3 uid="uid://ce0i6051pukrl"]
+
+[ext_resource type="Script" uid="uid://6vfb65n8bedy" path="res://scenes/Minigames/minigame_comercio.gd" id="1_bsgb4"]
+[ext_resource type="PackedScene" uid="uid://byhiv74c6sy7e" path="res://scenes/Tutorial/dragItem.tscn" id="2_1n4go"]
+[ext_resource type="PackedScene" uid="uid://ck4ne3mhhbbb4" path="res://Menu/timer/timer_label.tscn" id="3_1n4go"]
+[ext_resource type="PackedScene" uid="uid://damsjgrqvvm0i" path="res://Menu/lifebar/life_bar.tscn" id="4_ljkbk"]
+[ext_resource type="PackedScene" uid="uid://bur5a00bwel7l" path="res://scenes/Tutorial/drop_item.tscn" id="5_bsgb4"]
+
+[node name="MinigameComercio" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 1.0
+offset_right = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_bsgb4")
+drag_item_scene = ExtResource("2_1n4go")
+
+[node name="Pedido" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 14
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = 2.0
+offset_top = -111.0
+offset_right = -881.0
+offset_bottom = -42.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 40
+alignment = 1
+
+[node name="Label" type="Label" parent="Pedido"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 50
+text = "Pergunta"
+horizontal_alignment = 1
+
+[node name="timer_label" parent="." instance=ExtResource("3_1n4go")]
+layout_mode = 0
+offset_left = 976.0
+offset_top = 40.0
+offset_right = 1016.0
+offset_bottom = 123.0
+
+[node name="LifeBar" parent="." instance=ExtResource("4_ljkbk")]
+layout_mode = 0
+anchors_preset = 0
+anchor_right = 0.0
+anchor_bottom = 0.0
+offset_left = 48.0
+offset_top = 80.0
+offset_right = 88.0
+offset_bottom = 120.0
+grow_horizontal = 1
+grow_vertical = 1
+
+[node name="PrateleiraContainer" type="Control" parent="."]
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -299.0
+offset_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 0
+
+[node name="DropArea" parent="." instance=ExtResource("5_bsgb4")]
+layout_mode = 0
+offset_left = 327.0
+offset_top = 209.0
+offset_right = 367.0
+offset_bottom = 232.0

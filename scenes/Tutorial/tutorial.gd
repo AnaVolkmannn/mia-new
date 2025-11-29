@@ -41,7 +41,7 @@ func _generate_random_numbers() -> void:
 		var num = generated[i]
 		labels[i].set_values(num)
 		normal_labels[i].text = str(num)
-		drop_labels[i].number = num
+		drop_labels[i].Number = num
 		drop_labels[i].isRight = false
 	while generated.size() < 3:
 		var n = randi_range(1, 20)

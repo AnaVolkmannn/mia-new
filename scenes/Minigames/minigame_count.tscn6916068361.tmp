@@ -82,8 +82,6 @@ offset_left = 216.0
 offset_top = 472.0
 offset_right = 217.0
 offset_bottom = 555.0
-snap = 10
-number = 0
 
 [node name="Dlabel5" parent="." instance=ExtResource("3_b1gll")]
 layout_mode = 0
@@ -91,8 +89,6 @@ offset_left = 576.0
 offset_top = 480.0
 offset_right = 577.0
 offset_bottom = 563.0
-snap = 10
-number = 0
 
 [node name="Dlabel1" parent="." instance=ExtResource("3_b1gll")]
 layout_mode = 0
@@ -100,8 +96,6 @@ offset_left = 888.0
 offset_top = 480.0
 offset_right = 889.0
 offset_bottom = 563.0
-snap = 10
-number = 0
 
 [node name="timer_label" parent="." instance=ExtResource("4_mcu35")]
 layout_mode = 0
