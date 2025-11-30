@@ -1,0 +1,25 @@
+[gd_scene load_steps=3 format=3 uid="uid://bl24fuwun5ru1"]
+
+[ext_resource type="Script" uid="uid://dov64efmkrbwa" path="res://Menu/videos/video_intro.gd" id="1_bdque"]
+[ext_resource type="VideoStream" uid="uid://ddw4nx5kuq7y3" path="res://Menu/videos/Cutscene-inicial.ogv" id="1_xy8g5"]
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_bdque")
+
+[node name="VideoStreamPlayer" type="VideoStreamPlayer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+stream = ExtResource("1_xy8g5")
+autoplay = true
+
+[connection signal="finished" from="VideoStreamPlayer" to="." method="_on_video_stream_player_finished"]

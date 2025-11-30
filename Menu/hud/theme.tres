@@ -1,0 +1,44 @@
+[gd_resource type="Theme" load_steps=5 format=3 uid="uid://bdbauf7s7ooh0"]
+
+[ext_resource type="StyleBox" uid="uid://kjn8wvkdawbk" path="res://Menu/hud/flat_button.tres" id="1_fcp2v"]
+[ext_resource type="FontFile" uid="uid://bylhrguq2f6c6" path="res://assets/mapa/ConnectionII.otf" id="1_k7c26"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_k7c26"]
+bg_color = Color(0.84055775, 0.1731329, 0.19833967, 1)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color(0.9411765, 0.79607844, 0.42745098, 1)
+border_blend = true
+corner_radius_top_left = 1
+corner_radius_top_right = 1
+corner_radius_bottom_right = 1
+corner_radius_bottom_left = 1
+corner_detail = 1
+anti_aliasing = false
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_g4sty"]
+bg_color = Color(0.33668002, 0.036494203, 0.05112245, 1)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color(0.9411765, 0.79607844, 0.42745098, 1)
+border_blend = true
+corner_radius_top_left = 1
+corner_radius_top_right = 1
+corner_radius_bottom_right = 1
+corner_radius_bottom_left = 1
+corner_detail = 1
+anti_aliasing = false
+
+[resource]
+Button/fonts/font = ExtResource("1_k7c26")
+Button/styles/focus = ExtResource("1_fcp2v")
+Button/styles/hover = SubResource("StyleBoxFlat_k7c26")
+Button/styles/normal = ExtResource("1_fcp2v")
+Button/styles/pressed = SubResource("StyleBoxFlat_g4sty")
+Label/colors/font_color = Color(0.36862746, 0.20784314, 0.15686275, 1)
+Label/fonts/font = ExtResource("1_k7c26")
+OptionButton/fonts/font = ExtResource("1_k7c26")

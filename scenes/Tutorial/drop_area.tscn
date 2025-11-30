@@ -3,7 +3,7 @@
 [ext_resource type="Script" uid="uid://bcsfxaorgss1u" path="res://scenes/Tutorial/drop_area.gd" id="1_o3wef"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_on6mh"]
-size = Vector2(100, 100)
+size = Vector2(108, 78)
 
 [node name="DropArea" type="Label"]
 offset_right = 40.0
@@ -15,12 +15,13 @@ layout_mode = 0
 offset_left = -40.0
 offset_top = -40.0
 scale = Vector2(2.6927958, 1.945858)
-color = Color(0, 0, 0, 0.06666667)
+color = Color(0.14117648, 0.06666667, 0.043137256, 0.62352943)
 
 [node name="Area2D" type="Area2D" parent="."]
 position = Vector2(16, 8)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(-2, -9)
 shape = SubResource("RectangleShape2D_on6mh")
 
 [connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]

@@ -1,0 +1,48 @@
+[gd_scene load_steps=4 format=3 uid="uid://b85cd1hdi7ju6"]
+
+[ext_resource type="Script" uid="uid://bd5tnv7pcx8ul" path="res://Menu/videos/open_book.gd" id="1_1llb2"]
+[ext_resource type="VideoStream" uid="uid://osm7tm1cx5st" path="res://Menu/videos/1003.ogv" id="1_y46x8"]
+[ext_resource type="Theme" uid="uid://bdbauf7s7ooh0" path="res://Menu/hud/theme.tres" id="2_tqj2l"]
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_1llb2")
+
+[node name="AspectRatioContainer" type="AspectRatioContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+stretch_mode = 3
+
+[node name="VideoStreamPlayer" type="VideoStreamPlayer" parent="AspectRatioContainer"]
+layout_mode = 2
+stream = ExtResource("1_y46x8")
+autoplay = true
+expand = true
+
+[node name="Button" type="Button" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -39.5
+offset_top = -16.5
+offset_right = 39.5
+offset_bottom = 16.5
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("2_tqj2l")
+text = "Começar"
+
+[connection signal="finished" from="AspectRatioContainer/VideoStreamPlayer" to="." method="_on_video_stream_player_finished"]

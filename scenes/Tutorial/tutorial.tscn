@@ -1,8 +1,12 @@
-[gd_scene load_steps=4 format=3 uid="uid://dotyx4jil1m4t"]
+[gd_scene load_steps=8 format=3 uid="uid://dotyx4jil1m4t"]
 
 [ext_resource type="Script" uid="uid://dnnhyrog2gigm" path="res://scenes/Tutorial/tutorial.gd" id="1_43fa4"]
+[ext_resource type="Texture2D" uid="uid://vxn812v4smh2" path="res://assets/ribbon/a28ba1f7e8f811e6ee44d28016dba2dc.png" id="2_8p2m1"]
 [ext_resource type="PackedScene" uid="uid://cvj7e82nuuja3" path="res://scenes/Tutorial/drop_area.tscn" id="2_43fa4"]
+[ext_resource type="Theme" uid="uid://bdbauf7s7ooh0" path="res://Menu/hud/theme.tres" id="3_1g8ws"]
 [ext_resource type="PackedScene" uid="uid://dmdaw2uwqlu1q" path="res://scenes/Tutorial/dlabel.tscn" id="3_43fa4"]
+[ext_resource type="Texture2D" uid="uid://cohp7mh0mtedx" path="res://assets/ribbon/imagem.png" id="4_1g8ws"]
+[ext_resource type="FontFile" uid="uid://bylhrguq2f6c6" path="res://assets/mapa/ConnectionII.otf" id="4_6jcgc"]
 
 [node name="Tutorial" type="Control"]
 layout_mode = 3
@@ -13,39 +17,73 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_43fa4")
 
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(568, 112)
+texture = ExtResource("2_8p2m1")
+region_enabled = true
+region_rect = Rect2(43.370255, 287.78677, 405.8487, 141.72495)
+
+[node name="Label" type="Label" parent="Sprite2D"]
+offset_left = -160.0
+offset_top = -32.0
+offset_right = 152.0
+offset_bottom = 17.0
+theme = ExtResource("3_1g8ws")
+text = "Arraste os números romanos que correspondem aos números comuns"
+horizontal_alignment = 1
+autowrap_mode = 2
+
+[node name="Sprite2D2" type="Sprite2D" parent="."]
+position = Vector2(568, 424.00003)
+scale = Vector2(1.8, 1.8)
+texture = ExtResource("4_1g8ws")
+region_enabled = true
+region_rect = Rect2(29.87918, 452.6047, 592.66785, 241.57657)
+
 [node name="HBoxContainer" type="HBoxContainer" parent="."]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_left = -88.0
+offset_top = 88.0
+offset_right = -88.0
+offset_bottom = 88.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_constants/separation = 200
+theme = ExtResource("3_1g8ws")
+theme_override_constants/separation = 120
 alignment = 1
 
 [node name="romanos" type="VBoxContainer" parent="HBoxContainer"]
 layout_mode = 2
-theme_override_constants/separation = 40
+theme_override_constants/separation = 50
 alignment = 1
 
 [node name="Label" type="Label" parent="HBoxContainer/romanos"]
 layout_mode = 2
+theme_override_colors/font_color = Color(0.36700016, 0.20774874, 0.15654936, 1)
+theme_override_fonts/font = ExtResource("4_6jcgc")
 theme_override_font_sizes/font_size = 50
 text = "X"
 
 [node name="Label2" type="Label" parent="HBoxContainer/romanos"]
 layout_mode = 2
+theme_override_colors/font_color = Color(0.36700016, 0.20774874, 0.15654936, 1)
+theme_override_fonts/font = ExtResource("4_6jcgc")
 theme_override_font_sizes/font_size = 50
 text = "V"
 
 [node name="Label3" type="Label" parent="HBoxContainer/romanos"]
 layout_mode = 2
+theme_override_colors/font_color = Color(0.36700016, 0.20774874, 0.15654936, 1)
+theme_override_fonts/font = ExtResource("4_6jcgc")
 theme_override_font_sizes/font_size = 50
 text = "I"
 
 [node name="Normal" type="VBoxContainer" parent="HBoxContainer"]
 layout_mode = 2
-theme_override_constants/separation = 100
+theme_override_constants/separation = 80
 alignment = 1
 
 [node name="DropArea1" parent="HBoxContainer/Normal" instance=ExtResource("2_43fa4")]
@@ -64,24 +102,30 @@ alignment = 1
 
 [node name="Dlabel10" parent="." instance=ExtResource("3_43fa4")]
 layout_mode = 0
-offset_left = 791.0
-offset_top = 159.0
-offset_right = 792.0
-offset_bottom = 242.0
+offset_left = 888.0
+offset_top = 288.0
+offset_right = 889.0
+offset_bottom = 371.0
+theme_override_colors/font_color = Color(0.36862746, 0.20784314, 0.15686275, 1)
+theme_override_fonts/font = ExtResource("4_6jcgc")
 number = 10
 
 [node name="Dlabel5" parent="." instance=ExtResource("3_43fa4")]
 layout_mode = 0
-offset_left = 791.0
-offset_top = 282.0
-offset_right = 792.0
-offset_bottom = 365.0
+offset_left = 736.0
+offset_top = 392.0
+offset_right = 737.0
+offset_bottom = 475.0
+theme_override_colors/font_color = Color(0.36862746, 0.20784314, 0.15686275, 1)
+theme_override_fonts/font = ExtResource("4_6jcgc")
 number = 5
 
 [node name="Dlabel1" parent="." instance=ExtResource("3_43fa4")]
 layout_mode = 0
-offset_left = 791.0
-offset_top = 405.0
-offset_right = 792.0
-offset_bottom = 488.0
+offset_left = 888.0
+offset_top = 480.0
+offset_right = 889.0
+offset_bottom = 563.0
+theme_override_colors/font_color = Color(0.36862746, 0.20784314, 0.15686275, 1)
+theme_override_fonts/font = ExtResource("4_6jcgc")
 number = 1
