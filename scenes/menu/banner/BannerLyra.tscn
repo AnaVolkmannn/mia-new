@@ -1,0 +1,71 @@
+[gd_scene load_steps=8 format=3 uid="uid://cwahbela7of42"]
+
+[ext_resource type="Texture2D" uid="uid://vxn812v4smh2" path="res://assets/ribbon/a28ba1f7e8f811e6ee44d28016dba2dc.png" id="1_ksx22"]
+[ext_resource type="Script" uid="uid://dsa6w4umh5ete" path="res://scenes/menu/dialogLyra/dialog_lyra.gd" id="2_ksx22"]
+[ext_resource type="Theme" uid="uid://bdbauf7s7ooh0" path="res://Menu/hud/theme.tres" id="3_awgya"]
+[ext_resource type="Texture2D" uid="uid://d0ryvl2vdqgaa" path="res://assets/imagens/lyra3.png" id="4_cdw4g"]
+[ext_resource type="Texture2D" uid="uid://b6rnhnbc0281t" path="res://assets/imagens/lyra4.png" id="5_5ft6h"]
+[ext_resource type="Texture2D" uid="uid://cupo5ikviiquf" path="res://assets/imagens/lyra5.png" id="6_gxhxk"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_65ljl"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_cdw4g")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_5ft6h")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_gxhxk")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_cdw4g")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_5ft6h")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_gxhxk")
+}],
+"loop": true,
+"name": &"talk",
+"speed": 5.0
+}]
+
+[node name="Banner" type="Sprite2D"]
+texture = ExtResource("1_ksx22")
+region_enabled = true
+region_rect = Rect2(41.166443, 283.36713, 422.07275, 162.69846)
+script = ExtResource("2_ksx22")
+
+[node name="Label" type="Label" parent="."]
+offset_left = -160.0
+offset_top = -32.0
+offset_right = 152.0
+offset_bottom = 17.0
+theme = ExtResource("3_awgya")
+horizontal_alignment = 1
+autowrap_mode = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="Label2" type="Label" parent="."]
+offset_left = -152.0
+offset_top = 24.0
+offset_right = 160.0
+offset_bottom = 73.0
+theme = ExtResource("3_awgya")
+text = "Lyra"
+metadata/_edit_use_anchors_ = true
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(-200, 8)
+scale = Vector2(0.5, 0.5)
+sprite_frames = SubResource("SpriteFrames_65ljl")
+animation = &"talk"
+autoplay = "talk"

@@ -17,4 +17,6 @@ func _on_video_stream_player_finished() -> void:
 
 
 func _on_button_pressed() -> void:
-	pass # Replace with function body.
+	Fade.transition()
+	await Fade.on_transition_finished
+	get_tree().change_scene_to_file("res://scenes/Tutorial/tutorial.tscn")

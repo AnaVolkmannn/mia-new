@@ -1,9 +1,10 @@
-[gd_scene load_steps=8 format=3 uid="uid://dotyx4jil1m4t"]
+[gd_scene load_steps=9 format=3 uid="uid://dotyx4jil1m4t"]
 
 [ext_resource type="Script" uid="uid://dnnhyrog2gigm" path="res://scenes/Tutorial/tutorial.gd" id="1_43fa4"]
-[ext_resource type="Texture2D" uid="uid://vxn812v4smh2" path="res://assets/ribbon/a28ba1f7e8f811e6ee44d28016dba2dc.png" id="2_8p2m1"]
 [ext_resource type="PackedScene" uid="uid://cvj7e82nuuja3" path="res://scenes/Tutorial/drop_area.tscn" id="2_43fa4"]
+[ext_resource type="Texture2D" uid="uid://ckrs5ofwrcqe8" path="res://assets/imagens/botaopedra.png" id="2_uqt8d"]
 [ext_resource type="Theme" uid="uid://bdbauf7s7ooh0" path="res://Menu/hud/theme.tres" id="3_1g8ws"]
+[ext_resource type="PackedScene" uid="uid://cwahbela7of42" path="res://scenes/menu/banner/BannerLyra.tscn" id="3_6jcgc"]
 [ext_resource type="PackedScene" uid="uid://dmdaw2uwqlu1q" path="res://scenes/Tutorial/dlabel.tscn" id="3_43fa4"]
 [ext_resource type="Texture2D" uid="uid://cohp7mh0mtedx" path="res://assets/ribbon/imagem.png" id="4_1g8ws"]
 [ext_resource type="FontFile" uid="uid://bylhrguq2f6c6" path="res://assets/mapa/ConnectionII.otf" id="4_6jcgc"]
@@ -18,20 +19,14 @@ grow_vertical = 2
 script = ExtResource("1_43fa4")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(568, 112)
-texture = ExtResource("2_8p2m1")
-region_enabled = true
-region_rect = Rect2(43.370255, 287.78677, 405.8487, 141.72495)
+position = Vector2(640, 448)
+rotation = 3.1415927
+scale = Vector2(1.6601489, -2.764228)
+texture = ExtResource("2_uqt8d")
 
-[node name="Label" type="Label" parent="Sprite2D"]
-offset_left = -160.0
-offset_top = -32.0
-offset_right = 152.0
-offset_bottom = 17.0
-theme = ExtResource("3_1g8ws")
+[node name="Banner" parent="." instance=ExtResource("3_6jcgc")]
+position = Vector2(552, 112)
 text = "Arraste os números romanos que correspondem aos números comuns"
-horizontal_alignment = 1
-autowrap_mode = 2
 
 [node name="Sprite2D2" type="Sprite2D" parent="."]
 position = Vector2(568, 424.00003)

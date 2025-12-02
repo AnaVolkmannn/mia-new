@@ -1,12 +1,7 @@
 extends Area2D
 
 @export var dialog_view_path: NodePath
-@export var title: String = "Escriba Helena"
-@export var text: String = "Bem-vinda à biblioteca romana, Mia!"
-@export var options: Array = [
-	{ "Placeholder": "Explorar pergaminhos", "Goes": "explore" },
-	{ "Placeholder": "Sair", "Goes": "exit" }
-]
+@export var text: String = ""
 
 var triggered := false
 
@@ -18,5 +13,5 @@ func _on_body_entered(body: Node) -> void:
 		return
 	if body.name == "mia": # ou verifique por um grupo, tipo body.is_in_group("player")
 		var dialog_view = get_node(dialog_view_path)
-		dialog_view.show_dialog(title, text, options)
+		dialog_view.open_dialog(text)
 		triggered = true

@@ -137,6 +137,6 @@ sprite_frames = SubResource("SpriteFrames_881ty")
 animation = &"back"
 
 [node name="Camera2D" type="Camera2D" parent="."]
-zoom = Vector2(3, 3)
+zoom = Vector2(2, 2)
 
 [node name="HUD" parent="." instance=ExtResource("26_j07kl")]

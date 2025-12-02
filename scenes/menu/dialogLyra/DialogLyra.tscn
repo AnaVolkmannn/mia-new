@@ -1,0 +1,141 @@
+[gd_scene load_steps=12 format=3 uid="uid://b64fg30ly5rwm"]
+
+[ext_resource type="Texture2D" uid="uid://vxn812v4smh2" path="res://assets/ribbon/a28ba1f7e8f811e6ee44d28016dba2dc.png" id="1_5p6lg"]
+[ext_resource type="Theme" uid="uid://bdbauf7s7ooh0" path="res://Menu/hud/theme.tres" id="2_uw4w4"]
+[ext_resource type="Script" uid="uid://dsa6w4umh5ete" path="res://scenes/menu/dialogLyra/dialog_lyra.gd" id="2_xfo6o"]
+[ext_resource type="Texture2D" uid="uid://d0ryvl2vdqgaa" path="res://assets/imagens/lyra3.png" id="3_xfo6o"]
+[ext_resource type="Texture2D" uid="uid://b6rnhnbc0281t" path="res://assets/imagens/lyra4.png" id="4_v7cg0"]
+[ext_resource type="Texture2D" uid="uid://cupo5ikviiquf" path="res://assets/imagens/lyra5.png" id="5_4d8ta"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_65ljl"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_xfo6o")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_v7cg0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_4d8ta")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_xfo6o")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_v7cg0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_4d8ta")
+}],
+"loop": true,
+"name": &"talk",
+"speed": 5.0
+}]
+
+[sub_resource type="Animation" id="Animation_uw4w4"]
+resource_name = "pop"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(1e-05, 1e-05), Vector2(1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_xfo6o"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1e-05, 1e-05)]
+}
+
+[sub_resource type="Animation" id="Animation_v7cg0"]
+resource_name = "push"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(1, 1), Vector2(1e-05, 1e-05)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_v7cg0"]
+_data = {
+&"RESET": SubResource("Animation_xfo6o"),
+&"pop": SubResource("Animation_uw4w4"),
+&"push": SubResource("Animation_v7cg0")
+}
+
+[node name="Dialog" type="Sprite2D"]
+scale = Vector2(1e-05, 1e-05)
+texture = ExtResource("1_5p6lg")
+region_enabled = true
+region_rect = Rect2(38.80847, 285.72507, 426.7887, 155.62463)
+script = ExtResource("2_xfo6o")
+
+[node name="Label" type="Label" parent="."]
+anchors_preset = -1
+anchor_left = 0.15492958
+anchor_top = 0.36774194
+anchor_right = 0.20422535
+anchor_bottom = 0.58709675
+offset_left = -238.0
+offset_top = -92.0
+offset_right = 74.0
+offset_bottom = -43.0
+theme = ExtResource("2_uw4w4")
+theme_override_font_sizes/font_size = 20
+horizontal_alignment = 1
+autowrap_mode = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(213, -34)
+scale = Vector2(0.5, 0.5)
+sprite_frames = SubResource("SpriteFrames_65ljl")
+animation = &"talk"
+autoplay = "talk"
+flip_h = true
+
+[node name="close_button" type="Button" parent="."]
+offset_left = -173.0
+offset_top = -57.0
+offset_right = -153.0
+offset_bottom = -30.0
+theme = ExtResource("2_uw4w4")
+theme_override_colors/font_color = Color(0.36862746, 0.20784314, 0.15686275, 1)
+text = "X"
+flat = true
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_v7cg0")
+}
+autoplay = "pop"
+
+[connection signal="visibility_changed" from="." to="." method="_on_visibility_changed"]
+[connection signal="pressed" from="close_button" to="." method="_on_close_button_pressed"]

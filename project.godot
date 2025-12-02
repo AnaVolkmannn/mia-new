@@ -15,6 +15,10 @@ run/main_scene="uid://ciennnygj8n7n"
 config/features=PackedStringArray("4.5", "Forward Plus")
 config/icon="res://icon.svg"
 
+[autoload]
+
+Fade="*res://scenes/menu/fade.tscn"
+
 [input]
 
 up={

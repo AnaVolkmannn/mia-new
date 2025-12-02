@@ -1,9 +1,46 @@
-[gd_scene load_steps=5 format=3 uid="uid://ciennnygj8n7n"]
+[gd_scene load_steps=8 format=3 uid="uid://ciennnygj8n7n"]
 
 [ext_resource type="Script" uid="uid://csvjok8ye6vjl" path="res://script/menu/menu.gd" id="1_klgdb"]
 [ext_resource type="Theme" uid="uid://bdbauf7s7ooh0" path="res://Menu/hud/theme.tres" id="2_037ec"]
 [ext_resource type="Texture2D" uid="uid://cm8i7jm5pevfk" path="res://assets/imagens/pixel_art_large.png" id="2_mcvr8"]
 [ext_resource type="Texture2D" uid="uid://dxbm1cdg7hkdg" path="res://assets/imagens/telainicial.png" id="3_e0arn"]
+
+[sub_resource type="Animation" id="Animation_037ec"]
+resource_name = "idleMenu"
+length = 30.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ParallaxBackground/Sprite2D:position")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 28.733334),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(544, 408), Vector2(616, 408)]
+}
+
+[sub_resource type="Animation" id="Animation_y1o0p"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ParallaxBackground/Sprite2D:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(544, 408)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_r8yej"]
+_data = {
+&"RESET": SubResource("Animation_y1o0p"),
+&"idleMenu": SubResource("Animation_037ec")
+}
 
 [node name="menu" type="Control"]
 layout_mode = 3
@@ -55,9 +92,15 @@ texture = ExtResource("2_mcvr8")
 [node name="ParallaxBackground" type="ParallaxBackground" parent="."]
 
 [node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground"]
-position = Vector2(608, 400)
+position = Vector2(544, 408)
 scale = Vector2(0.8, 0.8)
 texture = ExtResource("3_e0arn")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_r8yej")
+}
+autoplay = "idleMenu"
 
 [connection signal="pressed" from="VBoxContainer/play" to="." method="_on_play_pressed"]
 [connection signal="pressed" from="VBoxContainer/play2" to="." method="_on_play_2_pressed"]

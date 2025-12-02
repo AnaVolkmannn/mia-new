@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://c83mrkppqekr0"]
+[gd_scene load_steps=3 format=3 uid="uid://c83mrkppqekr0"]
 
 [ext_resource type="Script" uid="uid://b8jtw2kxqmsb8" path="res://script/dialog/dialog_view.gd" id="1_fcbcf"]
+[ext_resource type="Theme" uid="uid://bdbauf7s7ooh0" path="res://Menu/hud/theme.tres" id="2_uddwf"]
 
 [node name="DialogView" type="Control"]
 layout_mode = 3
@@ -62,3 +63,4 @@ fit_content = true
 
 [node name="Options" type="VBoxContainer" parent="MarginContainer/Background/VBoxContainer"]
 layout_mode = 2
+theme = ExtResource("2_uddwf")

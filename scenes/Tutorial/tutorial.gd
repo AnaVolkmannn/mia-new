@@ -53,10 +53,24 @@ func _generate_random_numbers() -> void:
 # ===================================================
 # ⚙️ LOOP DE CHECAGEM
 # ===================================================
+var completed := false
+
 func _process(_delta: float) -> void:
+	if completed:
+		return
+
 	if drop_labels[0].isRight and drop_labels[1].isRight and drop_labels[2].isRight:
-		print("✅ Tudo certo, tutorial concluído!")
-		_save_progress()
+		completed = true
+		await _finish_tutorial()
+
+
+func _finish_tutorial() -> void:
+	Fade.transition()
+	print("✅ Tudo certo, tutorial concluído!")
+	_save_progress()
+	await Fade.on_transition_finished
+
+	if get_tree() != null:
 		get_tree().change_scene_to_file("res://scenes/main.tscn")
 
 # ===================================================

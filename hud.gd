@@ -25,7 +25,7 @@ func _update_scroll_label() -> void:
 			total_count = data["scrolls"]["total"]
 
 	# Atualiza o texto da Label
-	$Control/HBoxContainer/MarginContainer/Label.text = "Pergaminhos: %d / %d" % [found_count, total_count]
+	$Control/HBoxContainer/MarginContainer/Label3.text = "%d / %d" % [found_count, total_count]
 
 
 func _load_player_data() -> Dictionary:

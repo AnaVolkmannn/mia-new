@@ -36,7 +36,9 @@ func _on_quit_pressed() -> void:
 
 func _on_play_2_pressed() -> void:
 	_reset_progress()
-	get_tree().change_scene_to_file("res://scenes/Tutorial/tutorial.tscn")
+	Fade.transition()
+	await  Fade.on_transition_finished
+	get_tree().change_scene_to_file("res://Menu/videos/video intro.tscn")
 
 func _on_difficulty_option_item_selected(index: int) -> void:
 	var difficulties = ["easy", "medium", "hard"]
@@ -80,7 +82,7 @@ func _save_player_data(data: Dictionary) -> void:
 func _reset_progress() -> void:
 	var data = {
 		"tutorial_done": false,
-		"scrolls": {"found": [], "total": 0},
+		"scrolls": {"found": [], "total": 4},
 		"difficulty": "medium"
 	}
 	_save_player_data(data)

@@ -1,6 +1,9 @@
-[gd_scene load_steps=2 format=3 uid="uid://cles8ey1rkjwq"]
+[gd_scene load_steps=5 format=3 uid="uid://cles8ey1rkjwq"]
 
 [ext_resource type="Script" uid="uid://ccyubm5yei5na" path="res://hud.gd" id="1_5x4ov"]
+[ext_resource type="Texture2D" uid="uid://vxn812v4smh2" path="res://assets/ribbon/a28ba1f7e8f811e6ee44d28016dba2dc.png" id="2_j1cje"]
+[ext_resource type="Theme" uid="uid://bdbauf7s7ooh0" path="res://Menu/hud/theme.tres" id="3_yg0b3"]
+[ext_resource type="Texture2D" uid="uid://d28k821uih6bq" path="res://assets/ui/02.png" id="4_fdhen"]
 
 [node name="HUD" type="CanvasLayer"]
 script = ExtResource("1_5x4ov")
@@ -20,10 +23,23 @@ grow_horizontal = 2
 
 [node name="MarginContainer" type="MarginContainer" parent="Control/HBoxContainer"]
 layout_mode = 2
-theme_override_constants/margin_left = 20
-theme_override_constants/margin_top = 0
+theme_override_constants/margin_left = 35
+theme_override_constants/margin_top = 50
 
-[node name="Label" type="Label" parent="Control/HBoxContainer/MarginContainer"]
+[node name="Banner" type="Sprite2D" parent="Control/HBoxContainer/MarginContainer"]
+position = Vector2(62, 60)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("2_j1cje")
+region_enabled = true
+region_rect = Rect2(43.370255, 287.78677, 405.8487, 141.72495)
+
+[node name="Label3" type="Label" parent="Control/HBoxContainer/MarginContainer"]
 layout_mode = 2
+theme = ExtResource("3_yg0b3")
 theme_override_font_sizes/font_size = 30
 text = "0/4"
+
+[node name="Sprite2D" type="Sprite2D" parent="Control/HBoxContainer/MarginContainer"]
+position = Vector2(121.00001, 64)
+scale = Vector2(2.5, 2.5)
+texture = ExtResource("4_fdhen")
